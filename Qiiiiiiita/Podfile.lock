@@ -10,12 +10,12 @@ PODS:
     - Realm (= 4.3.0)
   - RxBlocking (5.0.1):
     - RxSwift (~> 5)
-  - RxCocoa (5.0.0):
+  - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.0)
+  - RxSwift (5.0.1)
   - RxTest (5.0.1):
     - RxSwift (~> 5)
   - SVProgressHUD (2.2.5)
@@ -60,15 +60,15 @@ SPEC CHECKSUMS:
   Realm: 9357c3589555793e1860a7104a7412bca4a48d99
   RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
-PODFILE CHECKSUM: 786aa9ab5212b979130e8877f68d76e537ddaf54
+PODFILE CHECKSUM: cbdebd65575ec715cc56dd4eed36735615097f65
 
 COCOAPODS: 1.8.4

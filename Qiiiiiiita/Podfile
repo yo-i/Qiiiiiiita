@@ -4,7 +4,7 @@
 target 'Qiiiiiiita' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  #progress
+
   pod 'SVProgressHUD'
   pod 'RealmSwift'
   pod 'RxSwift', '~> 5'
@@ -17,7 +17,6 @@ target 'Qiiiiiiita' do
   # Pods for Qiiiiiiita
 
   target 'QiiiiiiitaTests' do
-    inherit! :search_paths
     # Pods for testing
     pod 'RxBlocking', '~> 5'
     pod 'RxTest', '~> 5'
