@@ -10,45 +10,65 @@ import Foundation
 import RxSwift
 
 
-protocol QIItemViewPresentation {
+protocol QIItemViewPresenter {
     func getItem(itemId:String)
     func getComments(itemId:String)
-    func didClickCommentButton(itemId:String)
+    func didClickCommentButton(item:QIItemEntity)
+    func viewDidLoad()
 }
 
-class QIItemViewPresenter:QIItemViewPresentation{
+class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
+
+    
 
     weak var view:QIItemViewController?
     var router:QIItemViewRouter
-    var interactor:QIItemViewInteractorInput
+    var interactor:QIItemInteractor
     
     var comments:[QICommentEntity] = []
     var item:QIItemEntity? = nil
     
-    required init(view:QIItemViewController,router:QIItemViewRouter,interactor:QIItemViewInteractorInput)
+    required init(view:QIItemViewController,router:QIItemViewRouter,interactor:QIItemInteractor)
     {
         self.view = view
         self.router = router
         self.interactor = interactor
     }
     
-
+    
+    /// 記事取得
+    /// - Parameter itemId: 記事ID
     func getItem(itemId:String)
     {
-        
+        interactor.fetchItem(itemId: itemId)
     }
     
+    
+    /// 記事コメント取得
+    /// - Parameter itemId: 記事ID
     func getComments(itemId:String)
     {
-        
+        interactor.fetchComment(itemId: itemId)
     }
     
-    func didClickCommentButton(itemId:String)
+    
+    func fetchedItem(item: QIItemEntity) {
+        log.info(#function)
+        self.view?.showItem(item: item)
+    }
+    
+    func didClickCommentButton(item:QIItemEntity)
     {
-        guard let exItem = item else {
-            return
-        }
-        self.router.pushCommentView(item: exItem)
+        self.router.pushCommentView(item: item)
+    }
+    
+    func viewDidLoad() {
+        log.info(#function)
+        self.getItem(itemId: QIItemId)
+    }
+    
+    func failed() {
+        self.view?.showNetWorkError()
     }
     
 }

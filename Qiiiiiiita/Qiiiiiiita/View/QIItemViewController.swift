@@ -9,6 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import XCGLogger
+import Toaster
+let log = XCGLogger.default
 
 protocol QIItemViewInterface {
     func showItem(item:QIItemEntity)
@@ -20,16 +23,26 @@ class QIItemViewController: UIViewController {
 
 
     @IBOutlet weak var itemTable: UITableView!
+    var itemInteractor = QIItemInteractor()
+    var router:QIItemViewRouter!
     var presenter:QIItemViewPresentation!
+    
     var item:QIItemEntity? = nil
     var comments:[QICommentEntity] = []
     private let bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        router = QIItemViewRouter(viewController: self)
+        presenter = QIItemViewPresentation(view: self,router: router ,interactor: itemInteractor)
+        itemInteractor.output = presenter
+        
         setupView()
         setupRx()
         
+        presenter.viewDidLoad()
         
     }
     //
@@ -44,17 +57,16 @@ class QIItemViewController: UIViewController {
     }
     //クリックのイベント
     @IBAction func clickCommentButton(_ sender: Any) {
-        guard let existItem = self.item else {
-            return
-        }
+
         //プレゼンターに遷移するの指示を出す
-        self.presenter.didClickCommentButton(itemId: existItem.id )
+        self.presenter.didClickCommentButton(item: self.item! )
     }
 }
 
 extension QIItemViewController:QIItemViewInterface
 {
     func showItem(item: QIItemEntity) {
+        self.item = item
         self.itemTable.reloadData()
         self.navigationController?.title = item.title
     }
@@ -65,6 +77,8 @@ extension QIItemViewController:QIItemViewInterface
     }
     
     func showNetWorkError() {
+     
+        Toast.init(text: "error").show()
         
     }
 }

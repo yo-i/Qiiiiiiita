@@ -17,7 +17,7 @@
 		5FFE154723C1FC9D009C4C0C /* QIApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154623C1FC9D009C4C0C /* QIApiRequest.swift */; };
 		5FFE154923C2110A009C4C0C /* QIItemViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154823C2110A009C4C0C /* QIItemViewPresenter.swift */; };
 		5FFE154C23C2181C009C4C0C /* QIItemViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154B23C2181C009C4C0C /* QIItemViewRouter.swift */; };
-		5FFE154F23C21D58009C4C0C /* QIItemViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154E23C21D58009C4C0C /* QIItemViewInteractor.swift */; };
+		5FFE154F23C21D58009C4C0C /* QIItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154E23C21D58009C4C0C /* QIItemInteractor.swift */; };
 		A154858DF9DA9C4F27233554 /* Pods_Qiiiiiiita_QiiiiiiitaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56299CC9529C51A69683FCA /* Pods_Qiiiiiiita_QiiiiiiitaTests.framework */; };
 		F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3BE23AF32EB001DBD68 /* AppDelegate.swift */; };
 		F2B7C3C623AF32EC001DBD68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C423AF32EC001DBD68 /* Main.storyboard */; };
@@ -57,7 +57,7 @@
 		5FFE154623C1FC9D009C4C0C /* QIApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIApiRequest.swift; sourceTree = "<group>"; };
 		5FFE154823C2110A009C4C0C /* QIItemViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemViewPresenter.swift; sourceTree = "<group>"; };
 		5FFE154B23C2181C009C4C0C /* QIItemViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemViewRouter.swift; sourceTree = "<group>"; };
-		5FFE154E23C21D58009C4C0C /* QIItemViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemViewInteractor.swift; sourceTree = "<group>"; };
+		5FFE154E23C21D58009C4C0C /* QIItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemInteractor.swift; sourceTree = "<group>"; };
 		7D17C7597C7BFBB717E26018 /* Pods_Qiiiiiiita_QiiiiiiitaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiiiiiiita_QiiiiiiitaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8753CAD1776E40D076879749 /* Pods-Qiiiiiiita-QiiiiiiitaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita-QiiiiiiitaTests.debug.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita-QiiiiiiitaTests/Pods-Qiiiiiiita-QiiiiiiitaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91A0990ED4973B9A0D071758 /* Pods_Qiiiiiiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiiiiiiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +153,7 @@
 		5FFE154D23C21D3D009C4C0C /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				5FFE154E23C21D58009C4C0C /* QIItemViewInteractor.swift */,
+				5FFE154E23C21D58009C4C0C /* QIItemInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -500,7 +500,7 @@
 			files = (
 				5FFE154923C2110A009C4C0C /* QIItemViewPresenter.swift in Sources */,
 				5FFE150223C1B8BB009C4C0C /* QICommentEntity.swift in Sources */,
-				5FFE154F23C21D58009C4C0C /* QIItemViewInteractor.swift in Sources */,
+				5FFE154F23C21D58009C4C0C /* QIItemInteractor.swift in Sources */,
 				5FFE14FE23C1B781009C4C0C /* QIItemEntity.swift in Sources */,
 				F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */,
 				5FFE150023C1B7F2009C4C0C /* QIUserEntity.swift in Sources */,
