@@ -12,16 +12,21 @@ import Alamofire
 protocol QIItemInteractorInput {
     func fetchItem(itemId:String)
     func fetchComment(itemId:String)
+    
 }
 
 protocol QIItemInteractorOutput {
     func fetchedItem(item:QIItemEntity)
+    func fetchedComment(comments:[QICommentEntity])
     func failed()
 }
+
+
+
+
 //API呼ぶ処理を定義、interactorInput経由データをやり取り
 class QIItemInteractor:QIItemInteractorInput,QIApiRequest
 {
-    typealias Response = QIItemEntity
     var output:QIItemInteractorOutput!
     
     //記事を取得
@@ -31,7 +36,7 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
 
         log.info(baseUrl)
         AF.request(baseUrl).responseJSON { (res) in
-            let response = try! JSONDecoder().decode(Response.self, from: res.data!)
+            let response = try! JSONDecoder().decode(QIItemEntity.self, from: res.data!)
             log.info(response)
 
             self.output.fetchedItem(item: response)
@@ -46,6 +51,7 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
         AF.request(baseUrl).responseJSON { (res) in
            
             log.info(res)
+            self.output.fetchedComment(comments: [])
             
         }
     }

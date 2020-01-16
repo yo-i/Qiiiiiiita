@@ -19,6 +19,7 @@
 		5FFE154C23C2181C009C4C0C /* QIItemViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154B23C2181C009C4C0C /* QIItemViewRouter.swift */; };
 		5FFE154F23C21D58009C4C0C /* QIItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE154E23C21D58009C4C0C /* QIItemInteractor.swift */; };
 		A154858DF9DA9C4F27233554 /* Pods_Qiiiiiiita_QiiiiiiitaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56299CC9529C51A69683FCA /* Pods_Qiiiiiiita_QiiiiiiitaTests.framework */; };
+		A1774FA123D02F2200B841D5 /* QICommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1774FA023D02F2200B841D5 /* QICommentInteractor.swift */; };
 		F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3BE23AF32EB001DBD68 /* AppDelegate.swift */; };
 		F2B7C3C623AF32EC001DBD68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C423AF32EC001DBD68 /* Main.storyboard */; };
 		F2B7C3C823AF32F5001DBD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C723AF32F5001DBD68 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		7D17C7597C7BFBB717E26018 /* Pods_Qiiiiiiita_QiiiiiiitaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiiiiiiita_QiiiiiiitaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8753CAD1776E40D076879749 /* Pods-Qiiiiiiita-QiiiiiiitaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita-QiiiiiiitaTests.debug.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita-QiiiiiiitaTests/Pods-Qiiiiiiita-QiiiiiiitaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91A0990ED4973B9A0D071758 /* Pods_Qiiiiiiita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiiiiiiita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1774FA023D02F2200B841D5 /* QICommentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommentInteractor.swift; sourceTree = "<group>"; };
 		A56299CC9529C51A69683FCA /* Pods_Qiiiiiiita_QiiiiiiitaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiiiiiiita_QiiiiiiitaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B727DA1613477090E1F277 /* Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita-QiiiiiiitaTests/Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E03673C471E8DC4BD020035B /* Pods-Qiiiiiiita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita.debug.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita/Pods-Qiiiiiiita.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5FFE154E23C21D58009C4C0C /* QIItemInteractor.swift */,
+				A1774FA023D02F2200B841D5 /* QICommentInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				5FFE154923C2110A009C4C0C /* QIItemViewPresenter.swift in Sources */,
 				5FFE150223C1B8BB009C4C0C /* QICommentEntity.swift in Sources */,
 				5FFE154F23C21D58009C4C0C /* QIItemInteractor.swift in Sources */,
+				A1774FA123D02F2200B841D5 /* QICommentInteractor.swift in Sources */,
 				5FFE14FE23C1B781009C4C0C /* QIItemEntity.swift in Sources */,
 				F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */,
 				5FFE150023C1B7F2009C4C0C /* QIUserEntity.swift in Sources */,
@@ -685,7 +689,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CEKGB324VA;
+				DEVELOPMENT_TEAM = 77647EH33H;
 				INFOPLIST_FILE = Qiiiiiiita/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -693,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.00;
-				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.-";
+				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.test.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -707,7 +711,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CEKGB324VA;
+				DEVELOPMENT_TEAM = 77647EH33H;
 				INFOPLIST_FILE = Qiiiiiiita/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -715,7 +719,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.00;
-				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.-";
+				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.test.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

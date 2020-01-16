@@ -19,8 +19,6 @@ protocol QIItemViewPresenter {
 
 class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
 
-    
-
     weak var view:QIItemViewController?
     var router:QIItemViewRouter
     var interactor:QIItemInteractor
@@ -55,6 +53,11 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     func fetchedItem(item: QIItemEntity) {
         log.info(#function)
         self.view?.showItem(item: item)
+    }
+    
+    func fetchedComment(comments: [QICommentEntity]) {
+        log.info(#function)
+        self.view?.showComments(comment: comments)
     }
     
     func didClickCommentButton(item:QIItemEntity)

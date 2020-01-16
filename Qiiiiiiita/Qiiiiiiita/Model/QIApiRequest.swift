@@ -17,7 +17,6 @@ enum QIApiType:String
 }
 
 public protocol QIApiRequest{
-    associatedtype Response: Codable
     var apiKey:String{ get }
     var baseURL:String { get }
 }
