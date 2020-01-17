@@ -21,37 +21,55 @@ protocol QIItemInteractorOutput {
     func failed()
 }
 
-
-
-
 //API呼ぶ処理を定義、interactorInput経由データをやり取り
 class QIItemInteractor:QIItemInteractorInput,QIApiRequest
 {
-    var output:QIItemInteractorOutput!
+    var output:QIItemInteractorOutput?
     
-    //記事を取得
+    
+    /// 記事を取得
+    /// - Parameter itemId: 記事のID
     func fetchItem(itemId: String)
     {
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId
 
         log.info(baseUrl)
         AF.request(baseUrl).responseJSON { (res) in
-            let response = try! JSONDecoder().decode(QIItemEntity.self, from: res.data!)
-            log.info(response)
+            
+            switch res.result{
+            case .failure(let error):
+                log.error(error)
+                self.output?.failed()
+            case .success:
+                let response = try! JSONDecoder().decode(QIItemEntity.self, from: res.data!)
+                log.info(response)
 
-            self.output.fetchedItem(item: response)
+                self.output?.fetchedItem(item: response)
+            }
+            
         }
         
         
     }
     
+    
+    /// 記事のコメントを取得
+    /// - Parameter itemId: 記事ID
     func fetchComment(itemId: String) {
         let baseUrl = baseURL + QIApiType.comment.rawValue + "/" + itemId
     
         AF.request(baseUrl).responseJSON { (res) in
            
-            log.info(res)
-            self.output.fetchedComment(comments: [])
+            switch res.result{
+            case .failure(let error):
+                log.error(error)
+                self.output?.failed()
+            case .success:
+
+
+                //TODO:
+                self.output?.fetchedComment(comments: [])
+            }
             
         }
     }

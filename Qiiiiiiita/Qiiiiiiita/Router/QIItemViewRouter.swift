@@ -17,8 +17,8 @@ class QIItemViewRouter{
     }
     func pushCommentView(item:QIItemEntity)
     {
-        let newCommentVC = QINewCommentViewController()
-        self.view?.navigationController?.pushViewController(newCommentVC, animated: true)
+        let newCommentVC = view?.storyboard?.instantiateViewController(withIdentifier: "QICommentView")
+        self.view?.navigationController?.pushViewController(newCommentVC!, animated: true)
     }
     
 }

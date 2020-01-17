@@ -15,6 +15,7 @@ protocol QIItemViewPresenter {
     func getComments(itemId:String)
     func didClickCommentButton(item:QIItemEntity)
     func viewDidLoad()
+    func viewDidAppear()
 }
 
 class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
@@ -67,9 +68,11 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     
     func viewDidLoad() {
         log.info(#function)
-        self.getItem(itemId: QIItemId)
     }
-    
+
+    func viewDidAppear() {
+        log.info(#function)
+    }
     func failed() {
         self.view?.showNetWorkError()
     }

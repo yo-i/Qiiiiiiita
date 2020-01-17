@@ -12,8 +12,7 @@ target 'Qiiiiiiita' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'XCGLogger', '~> 7.0.0'
   pod 'Alamofire', '~> 5.0.0-rc.3'
-  pod 'Toaster'
-
+  pod 'Toast-Swift', '~> 5.0.1'
   # Pods for Qiiiiiiita
 
   target 'QiiiiiiitaTests' do

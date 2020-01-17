@@ -21,8 +21,13 @@ protocol QICommentInteractorOutput {
 //API呼ぶ処理を定義、interactorInput経由データをやり取り
 class QICommentInteractor:QICommentInteractorInput,QIApiRequest
 {
-    var output:QICommentInteractorOutput!
+    var output:QICommentInteractorOutput?
     
+    
+    /// 記事にたいしてｋコメントを投稿
+    /// - Parameters:
+    ///   - itemId: 記事ID
+    ///   - comment: コメント内容
     func postComment(itemId: String, comment: String) {
         
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId + "/comments"
@@ -45,7 +50,7 @@ class QICommentInteractor:QICommentInteractorInput,QIApiRequest
                 log.error(error)
             case .success(let data):
                 log.info(data)
-                self.output.postedComment()
+                self.output?.postedComment()
             }
             
             

@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import XCGLogger
-import Toaster
+import SVProgressHUD
+import Toast_Swift
 let log = XCGLogger.default
 
 protocol QIItemViewInterface {
@@ -45,6 +46,12 @@ class QIItemViewController: UIViewController {
         presenter.viewDidLoad()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.viewDidAppear()
+        presenter.getItem(itemId: QIItemId)
+    }
+    
     //
     func setupView()
     {
@@ -66,6 +73,8 @@ class QIItemViewController: UIViewController {
 extension QIItemViewController:QIItemViewInterface
 {
     func showItem(item: QIItemEntity) {
+
+        self.view.makeToast(QIMessage.item.success())
         self.item = item
         self.itemTable.reloadData()
         self.navigationController?.title = item.title
@@ -78,7 +87,7 @@ extension QIItemViewController:QIItemViewInterface
     
     func showNetWorkError() {
      
-        Toast.init(text: "error").show()
+        self.view.makeToast(QIMessage.item.error())
         
     }
 }

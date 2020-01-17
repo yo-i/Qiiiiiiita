@@ -28,7 +28,7 @@
         <scene sceneID="RjD-bm-cxf">
             <objects>
                 <viewController id="gGo-02-upB" customClass="QIItemViewController" customModule="Qiiiiiiita" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xHm-ra-GjQ">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="QICommentView" id="xHm-ra-GjQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

@@ -3,11 +3,11 @@ PODS:
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
-  - Realm (4.3.0):
-    - Realm/Headers (= 4.3.0)
-  - Realm/Headers (4.3.0)
-  - RealmSwift (4.3.0):
-    - Realm (= 4.3.0)
+  - Realm (4.3.1):
+    - Realm/Headers (= 4.3.1)
+  - Realm/Headers (4.3.1)
+  - RealmSwift (4.3.1):
+    - Realm (= 4.3.1)
   - RxBlocking (5.0.1):
     - RxSwift (~> 5)
   - RxCocoa (5.0.1):
@@ -20,7 +20,7 @@ PODS:
     - RxSwift (~> 5)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.3.0)
-  - Toaster (2.2.0)
+  - Toast-Swift (5.0.1)
   - XCGLogger (7.0.0):
     - XCGLogger/Core (= 7.0.0)
   - XCGLogger/Core (7.0.0):
@@ -35,7 +35,7 @@ DEPENDENCIES:
   - RxTest (~> 5)
   - SVProgressHUD
   - SwiftyJSON (~> 4.0)
-  - Toaster
+  - Toast-Swift (~> 5.0.1)
   - XCGLogger (~> 7.0.0)
 
 SPEC REPOS:
@@ -51,14 +51,14 @@ SPEC REPOS:
     - RxTest
     - SVProgressHUD
     - SwiftyJSON
-    - Toaster
+    - Toast-Swift
     - XCGLogger
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
-  Realm: 9357c3589555793e1860a7104a7412bca4a48d99
-  RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
+  Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
+  RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
@@ -66,9 +66,9 @@ SPEC CHECKSUMS:
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
-PODFILE CHECKSUM: cbdebd65575ec715cc56dd4eed36735615097f65
+PODFILE CHECKSUM: 690308b2279904ba7a6a8b0b296e0d9a3ed4a9b4
 
 COCOAPODS: 1.8.4
