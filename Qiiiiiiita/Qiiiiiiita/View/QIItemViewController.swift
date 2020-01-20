@@ -99,6 +99,7 @@ extension QIItemViewController:UITableViewDelegate
 
 extension QIItemViewController:UITableViewDataSource
 {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0://投稿内容
@@ -109,9 +110,17 @@ extension QIItemViewController:UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "comment")
-        //TODO:
-        return cell
+        
+        switch indexPath.section{
+            case 0:
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "body")
+            //TODO:
+            return cell
+            default:
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "comment")
+            //TODO:
+            return cell
+        }
     }
     
     
