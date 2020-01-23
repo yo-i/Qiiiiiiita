@@ -12,7 +12,7 @@ import RxCocoa
 import XCGLogger
 import SVProgressHUD
 import Toast_Swift
-let log = XCGLogger.default
+
 
 protocol QIItemViewInterface {
     func showItem(item:QIItemEntity)
@@ -30,6 +30,8 @@ class QIItemViewController: UIViewController {
     
     var item:QIItemEntity? = nil
     var comments:[QICommentEntity] = []
+    
+    let itemCount = 1 //記事の内容は1セルで表示
     private let bag = DisposeBag()
     
     override func viewDidLoad() {
@@ -65,8 +67,11 @@ class QIItemViewController: UIViewController {
     //クリックのイベント
     @IBAction func clickCommentButton(_ sender: Any) {
 
+        guard let outPutItem = self.item else {
+            return
+        }
         //プレゼンターに遷移するの指示を出す
-        self.presenter.didClickCommentButton(item: self.item! )
+        self.presenter.didClickCommentButton(item: outPutItem )
     }
 }
 
@@ -103,7 +108,7 @@ extension QIItemViewController:UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0://投稿内容
-            return 1
+            return itemCount
         default://コメント内容
             return self.comments.count
         }
@@ -113,13 +118,13 @@ extension QIItemViewController:UITableViewDataSource
         
         switch indexPath.section{
             case 0:
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "body")
-            //TODO:
-            return cell
+                guard let toPresentItem = self.item else
+                {
+                    return UITableViewCell()
+                }
+            return self.presenter.tableSetItemCell(item: toPresentItem)
             default:
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "comment")
-            //TODO:
-            return cell
+            return self.presenter.tableSetCommentCell(comment: self.comments[indexPath.row])
         }
     }
     

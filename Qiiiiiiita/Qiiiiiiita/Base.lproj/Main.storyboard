@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="-189.85507246376812" y="115.17857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--New Comment View Controller-->
         <scene sceneID="VTt-RI-ym1">
             <objects>
-                <viewController id="xZH-DQ-3iA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QICommentView" id="xZH-DQ-3iA" customClass="QINewCommentViewController" customModule="Qiiiiiiita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XVu-jN-fH3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

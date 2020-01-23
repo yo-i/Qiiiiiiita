@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import XCGLogger
+let log = XCGLogger.default
+
 /// メッセージの文言を整理する
 /// メッセージの文言増え場合、ここに追加
 enum QIMessage:String

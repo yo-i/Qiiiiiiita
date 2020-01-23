@@ -16,6 +16,8 @@ protocol QIItemViewPresenter {
     func didClickCommentButton(item:QIItemEntity)
     func viewDidLoad()
     func viewDidAppear()
+    func tableSetItemCell(item:QIItemEntity)->UITableViewCell
+    func tableSetCommentCell(comment:QICommentEntity)->UITableViewCell
 }
 
 class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
@@ -76,5 +78,14 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     func failed() {
         self.view?.showNetWorkError()
     }
+
+    func tableSetItemCell(item: QIItemEntity)->UITableViewCell {
+        //TODO: Cell制御
+        return UITableViewCell()
+    }
     
+    func tableSetCommentCell(comment: QICommentEntity)->UITableViewCell {
+        //TODO: Cell制御
+        return UITableViewCell()
+    }
 }
