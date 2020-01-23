@@ -13,7 +13,7 @@ import Foundation
 enum QIApiType:String
 {
     case items = "items"
-    case comment = "comment"
+    case comment = "comments"
 }
 
 public protocol QIApiRequest{

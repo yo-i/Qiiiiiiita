@@ -52,6 +52,8 @@ class QIItemViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         presenter.viewDidAppear()
         presenter.getItem(itemId: QIItemId)
+
+        
     }
     
     //
@@ -83,6 +85,8 @@ extension QIItemViewController:QIItemViewInterface
         self.item = item
         self.itemTable.reloadData()
         self.navigationController?.title = item.title
+        
+        self.presenter.getComments(itemId: item.id)
     }
     
     func showComments(comment: [QICommentEntity]) {

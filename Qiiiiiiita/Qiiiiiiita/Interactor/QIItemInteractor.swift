@@ -21,6 +21,8 @@ protocol QIItemInteractorOutput {
     func failed()
 }
 
+
+
 //API呼ぶ処理を定義、interactorInput経由データをやり取り
 class QIItemInteractor:QIItemInteractorInput,QIApiRequest
 {
@@ -41,10 +43,21 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
                 log.error(error)
                 self.output?.failed()
             case .success:
-                let response = try! JSONDecoder().decode(QIItemEntity.self, from: res.data!)
-                log.info(response)
+                do
+                {
+                    let response = try JSONDecoder().decode(QIItemEntity.self, from: res.data!)
+                    log.info(response)
 
-                self.output?.fetchedItem(item: response)
+                    self.output?.fetchedItem(item: response)
+                    
+                    //MARK: これはあり?なし?
+                    //self.fetchComment(itemId: response.id)
+                }
+                catch
+                {
+                    self.output?.failed()
+                }
+                
             }
             
         }
@@ -56,7 +69,7 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
     /// 記事のコメントを取得
     /// - Parameter itemId: 記事ID
     func fetchComment(itemId: String) {
-        let baseUrl = baseURL + QIApiType.comment.rawValue + "/" + itemId
+        let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId + "/" + QIApiType.comment.rawValue
     
         AF.request(baseUrl).responseJSON { (res) in
            
@@ -66,9 +79,19 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
                 self.output?.failed()
             case .success:
 
-
-                //TODO:
-                self.output?.fetchedComment(comments: [])
+                do
+                {
+                    //FIXME: fetchしたデータが存在しないのエラーハンドリング
+                    let response = try JSONDecoder().decode([QICommentEntity].self, from: res.data!)
+                    log.info(response)
+                    //TODO:
+                    self.output?.fetchedComment(comments: response)
+                }
+                catch
+                {
+                    self.output?.failed()
+                }
+                
             }
             
         }

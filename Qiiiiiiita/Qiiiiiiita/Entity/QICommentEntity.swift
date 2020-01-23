@@ -13,14 +13,14 @@ struct QICommentEntity:Codable {
     let id          :String
     let renderedBody:String
     let updateAt    :String
-    let user        :String
+    let user        :QIUserEntity
     
     private enum CodingKeys: String, CodingKey {
         case body
         case createdAt      = "created_at"
         case id
         case renderedBody   = "rendered_body"
-        case updateAt       = "update_at"
+        case updateAt       = "updated_at"
         case user
     }
 }
