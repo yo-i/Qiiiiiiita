@@ -10,6 +10,7 @@ import UIKit
 
 class QICommentCell: UITableViewCell {
 
+    @IBOutlet weak var commentCellValue: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

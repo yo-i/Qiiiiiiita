@@ -10,11 +10,11 @@ import Foundation
 
 
 
-extension NSAttributedString {
+extension String {
 
-    
-    static func parseHTML2Text(sourceText text: String) -> NSAttributedString? {
-        let encodeData = text.data(using: String.Encoding.utf8, allowLossyConversion: true)
+    func parseHTML2Text() -> NSAttributedString? {
+        
+        let encodeData = self.data(using: String.Encoding.utf8, allowLossyConversion: true)
         let attributedOptions =
             [
                 NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
@@ -36,5 +36,6 @@ extension NSAttributedString {
 
         return attributedString
     }
+
 
 }

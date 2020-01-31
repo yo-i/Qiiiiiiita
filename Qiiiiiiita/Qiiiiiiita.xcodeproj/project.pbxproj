@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		12B677B24872E129B6F5CF35 /* Pods_Qiiiiiiita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A0990ED4973B9A0D071758 /* Pods_Qiiiiiiita.framework */; };
 		3309B0098801A2AA092FC091 /* Pods_Qiiiiiiita_QiiiiiiitaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D17C7597C7BFBB717E26018 /* Pods_Qiiiiiiita_QiiiiiiitaUITests.framework */; };
+		5F0082BC23E3E60F00E0EF25 /* QIItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0082BA23E3E60F00E0EF25 /* QIItemCell.swift */; };
+		5F0082BD23E3E60F00E0EF25 /* QIItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0082BB23E3E60F00E0EF25 /* QIItemCell.xib */; };
 		5FFE14FE23C1B781009C4C0C /* QIItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE14FD23C1B781009C4C0C /* QIItemEntity.swift */; };
 		5FFE150023C1B7F2009C4C0C /* QIUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE14FF23C1B7F2009C4C0C /* QIUserEntity.swift */; };
 		5FFE150223C1B8BB009C4C0C /* QICommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFE150123C1B8BB009C4C0C /* QICommentEntity.swift */; };
@@ -22,7 +24,6 @@
 		A1774FA123D02F2200B841D5 /* QICommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1774FA023D02F2200B841D5 /* QICommentInteractor.swift */; };
 		A1C0808523D18BE1001FEEB7 /* QIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0808423D18BE1001FEEB7 /* QIDefine.swift */; };
 		A1C080A723D5981C001FEEB7 /* QICommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080A623D5981C001FEEB7 /* QICommon.swift */; };
-		A1C080AC23D970F7001FEEB7 /* QIItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080AB23D970F7001FEEB7 /* QIItemCell.swift */; };
 		A1C080AF23D9710F001FEEB7 /* QICommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080AD23D9710F001FEEB7 /* QICommentCell.swift */; };
 		A1C080B023D9710F001FEEB7 /* QICommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C080AE23D9710F001FEEB7 /* QICommentCell.xib */; };
 		A1C080B223D97A21001FEEB7 /* QIItemInteractoreURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080B123D97A21001FEEB7 /* QIItemInteractoreURLSession.swift */; };
@@ -56,6 +57,8 @@
 		24E3E62FAD6A81351F302848 /* Pods-Qiiiiiiita-QiiiiiiitaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita-QiiiiiiitaUITests.release.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita-QiiiiiiitaUITests/Pods-Qiiiiiiita-QiiiiiiitaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2FFADFE39B02590936C6BE4D /* Pods-QiiiiiiitaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiiiiiiitaTests.debug.xcconfig"; path = "Target Support Files/Pods-QiiiiiiitaTests/Pods-QiiiiiiitaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4449BCDC43396D29CE0095BA /* Pods-Qiiiiiiita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita.release.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita/Pods-Qiiiiiiita.release.xcconfig"; sourceTree = "<group>"; };
+		5F0082BA23E3E60F00E0EF25 /* QIItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemCell.swift; sourceTree = "<group>"; };
+		5F0082BB23E3E60F00E0EF25 /* QIItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QIItemCell.xib; sourceTree = "<group>"; };
 		5FFE14FD23C1B781009C4C0C /* QIItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemEntity.swift; sourceTree = "<group>"; };
 		5FFE14FF23C1B7F2009C4C0C /* QIUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIUserEntity.swift; sourceTree = "<group>"; };
 		5FFE150123C1B8BB009C4C0C /* QICommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommentEntity.swift; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		A1774FA023D02F2200B841D5 /* QICommentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommentInteractor.swift; sourceTree = "<group>"; };
 		A1C0808423D18BE1001FEEB7 /* QIDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIDefine.swift; sourceTree = "<group>"; };
 		A1C080A623D5981C001FEEB7 /* QICommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommon.swift; sourceTree = "<group>"; };
-		A1C080AB23D970F7001FEEB7 /* QIItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemCell.swift; sourceTree = "<group>"; };
 		A1C080AD23D9710F001FEEB7 /* QICommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommentCell.swift; sourceTree = "<group>"; };
 		A1C080AE23D9710F001FEEB7 /* QICommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QICommentCell.xib; sourceTree = "<group>"; };
 		A1C080B123D97A21001FEEB7 /* QIItemInteractoreURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemInteractoreURLSession.swift; sourceTree = "<group>"; };
@@ -193,9 +195,10 @@
 		A1C080A823D970B0001FEEB7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A1C080AB23D970F7001FEEB7 /* QIItemCell.swift */,
 				A1C080AD23D9710F001FEEB7 /* QICommentCell.swift */,
 				A1C080AE23D9710F001FEEB7 /* QICommentCell.xib */,
+				5F0082BA23E3E60F00E0EF25 /* QIItemCell.swift */,
+				5F0082BB23E3E60F00E0EF25 /* QIItemCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				F2B7C3CB23AF32F5001DBD68 /* LaunchScreen.storyboard in Resources */,
 				F2B7C3C823AF32F5001DBD68 /* Assets.xcassets in Resources */,
 				F2B7C3C623AF32EC001DBD68 /* Main.storyboard in Resources */,
+				5F0082BD23E3E60F00E0EF25 /* QIItemCell.xib in Resources */,
 				A1C080B023D9710F001FEEB7 /* QICommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,13 +536,13 @@
 				5FFE150223C1B8BB009C4C0C /* QICommentEntity.swift in Sources */,
 				5FFE154F23C21D58009C4C0C /* QIItemInteractor.swift in Sources */,
 				A1774FA123D02F2200B841D5 /* QICommentInteractor.swift in Sources */,
+				5F0082BC23E3E60F00E0EF25 /* QIItemCell.swift in Sources */,
 				A1C080B223D97A21001FEEB7 /* QIItemInteractoreURLSession.swift in Sources */,
 				5FFE14FE23C1B781009C4C0C /* QIItemEntity.swift in Sources */,
 				A1C080AF23D9710F001FEEB7 /* QICommentCell.swift in Sources */,
 				F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */,
 				5FFE150023C1B7F2009C4C0C /* QIUserEntity.swift in Sources */,
 				5FFE154323C1F22D009C4C0C /* QINewCommentViewController.swift in Sources */,
-				A1C080AC23D970F7001FEEB7 /* QIItemCell.swift in Sources */,
 				A1C080A723D5981C001FEEB7 /* QICommon.swift in Sources */,
 				5FFE154123C1F1EE009C4C0C /* QIItemViewController.swift in Sources */,
 				5FFE154723C1FC9D009C4C0C /* QIApiRequest.swift in Sources */,
@@ -721,7 +725,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77647EH33H;
+				DEVELOPMENT_TEAM = CEKGB324VA;
 				INFOPLIST_FILE = Qiiiiiiita/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -729,7 +733,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.00;
-				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.test.-";
+				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -743,7 +747,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77647EH33H;
+				DEVELOPMENT_TEAM = CEKGB324VA;
 				INFOPLIST_FILE = Qiiiiiiita/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -751,7 +755,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.00;
-				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.test.-";
+				PRODUCT_BUNDLE_IDENTIFIER = "yo.Qiiiiiiita.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

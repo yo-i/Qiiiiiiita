@@ -16,8 +16,8 @@ protocol QIItemViewPresenter {
     func didClickCommentButton(item:QIItemEntity)
     func viewDidLoad()
     func viewDidAppear()
-    func tableSetItemCell(item:QIItemEntity)->UITableViewCell
-    func tableSetCommentCell(comment:QICommentEntity)->UITableViewCell
+    func tableSetItemCell(item:QIItemEntity,cell:QIItemCell)
+    func tableSetCommentCell(comment:QICommentEntity,cell:QICommentCell)
 }
 
 class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
@@ -79,13 +79,14 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
         self.view?.showNetWorkError()
     }
 
-    func tableSetItemCell(item: QIItemEntity)->UITableViewCell {
-        //TODO: Cell制御
-        return UITableViewCell()
+    func tableSetItemCell(item: QIItemEntity,cell:QIItemCell) {
+
+        cell.itemCellValue.attributedText = item.renderedBody.parseHTML2Text()
+        
     }
     
-    func tableSetCommentCell(comment: QICommentEntity)->UITableViewCell {
-        //TODO: Cell制御
-        return UITableViewCell()
+    func tableSetCommentCell(comment: QICommentEntity,cell:QICommentCell) {
+
+        cell.commentCellValue.attributedText = comment.renderedBody.parseHTML2Text()
     }
 }

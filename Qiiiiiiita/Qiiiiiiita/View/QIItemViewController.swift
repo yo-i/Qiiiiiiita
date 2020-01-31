@@ -61,6 +61,9 @@ class QIItemViewController: UIViewController {
     {
         self.itemTable.delegate = self
         self.itemTable.dataSource = self
+        self.itemTable.register(UINib(nibName: "QIItemCell", bundle: nil), forCellReuseIdentifier: "QIItemCell")
+        self.itemTable.register(UINib(nibName: "QICommentCell", bundle: nil), forCellReuseIdentifier: "QICommentCell")
+        
     }
     func setupRx()
     {
@@ -90,8 +93,8 @@ extension QIItemViewController:QIItemViewInterface
     }
     
     func showComments(comment: [QICommentEntity]) {
+        self.comments = comment
         self.itemTable.reloadData()
-        
     }
     
     func showNetWorkError() {
@@ -108,6 +111,11 @@ extension QIItemViewController:UITableViewDelegate
 
 extension QIItemViewController:UITableViewDataSource
 {
+ 
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -126,9 +134,15 @@ extension QIItemViewController:UITableViewDataSource
                 {
                     return UITableViewCell()
                 }
-            return self.presenter.tableSetItemCell(item: toPresentItem)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "QIItemCell") as! QIItemCell
+                self.presenter.tableSetItemCell(item: toPresentItem, cell: cell)
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "QICommentCell") as! QICommentCell
+                self.presenter.tableSetCommentCell(comment: self.comments[indexPath.row], cell: cell)
+                return cell
             default:
-            return self.presenter.tableSetCommentCell(comment: self.comments[indexPath.row])
+                return UITableViewCell()
         }
     }
     
