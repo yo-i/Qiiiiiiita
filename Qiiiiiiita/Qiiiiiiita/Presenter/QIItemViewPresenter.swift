@@ -82,7 +82,7 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     func tableSetItemCell(item: QIItemEntity,cell:QIItemCell) {
 
         cell.itemCellValue.attributedText = item.renderedBody.parseHTML2Text()
-        
+
     }
     
     func tableSetCommentCell(comment: QICommentEntity,cell:QICommentCell) {

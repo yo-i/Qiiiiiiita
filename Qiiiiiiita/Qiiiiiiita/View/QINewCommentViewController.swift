@@ -8,7 +8,8 @@
 
 import UIKit
 protocol QINewCommentViewInterface {
-    func postComment(comment:QICommentEntity)
+    func postedComment(comment:QICommentEntity)
+    func showNetWorkError()
 }
 class QINewCommentViewController: UIViewController {
 

@@ -16,6 +16,15 @@ struct QIItemEntity:Codable {
     let title       :String
     let user        :QIUserEntity
     
+    init()
+    {
+        self.renderedBody = ""
+        self.body = ""
+        self.id = ""
+        self.title = ""
+        self.user = QIUserEntity.init(description: "", id: "")
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case body
         case id
