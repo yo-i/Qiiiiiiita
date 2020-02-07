@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRT-rC-skB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRT-rC-skB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,17 +33,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sZF-co-YYg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="514"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="4bs-7z-Nqu"/>
-                                    <constraint firstAttribute="height" constant="514" id="xdj-pv-Gat"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="548" id="4bs-7z-Nqu"/>
                                 </constraints>
                                 <sections/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-I1-uSb">
-                                <rect key="frame" x="294" y="792" width="120" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-I1-uSb">
+                                <rect key="frame" x="316" y="806" width="82" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="コメント"/>
                                 <connections>
@@ -53,8 +51,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ksf-I1-uSb" firstAttribute="top" secondItem="sZF-co-YYg" secondAttribute="bottom" constant="19" id="0qw-vG-V0N"/>
                             <constraint firstItem="sZF-co-YYg" firstAttribute="top" secondItem="1Mr-G8-EKe" secondAttribute="top" id="6hp-rS-DU0"/>
-                            <constraint firstItem="sZF-co-YYg" firstAttribute="leading" secondItem="1Mr-G8-EKe" secondAttribute="leading" id="hKm-xG-9A9"/>
+                            <constraint firstItem="Ksf-I1-uSb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Mr-G8-EKe" secondAttribute="leading" symbolic="YES" id="MNj-9q-i6J"/>
+                            <constraint firstItem="sZF-co-YYg" firstAttribute="leading" secondItem="1Mr-G8-EKe" secondAttribute="leading" id="gDM-xq-oAb"/>
+                            <constraint firstItem="Ksf-I1-uSb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sZF-co-YYg" secondAttribute="bottom" constant="8" id="hSb-qI-3rM"/>
+                            <constraint firstItem="Ksf-I1-uSb" firstAttribute="bottom" secondItem="1Mr-G8-EKe" secondAttribute="bottom" constant="-20" id="jor-pu-XWY"/>
+                            <constraint firstItem="1Mr-G8-EKe" firstAttribute="trailing" secondItem="Ksf-I1-uSb" secondAttribute="trailing" constant="16" id="o17-tg-Lvl"/>
                             <constraint firstItem="sZF-co-YYg" firstAttribute="centerX" secondItem="xHm-ra-GjQ" secondAttribute="centerX" id="u6k-Sf-Z3D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Mr-G8-EKe"/>
@@ -66,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdz-PV-XzT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-189.85507246376812" y="115.17857142857142"/>
+            <point key="canvasLocation" x="-191.19999999999999" y="114.69265367316342"/>
         </scene>
         <!--New Comment View Controller-->
         <scene sceneID="VTt-RI-ym1">

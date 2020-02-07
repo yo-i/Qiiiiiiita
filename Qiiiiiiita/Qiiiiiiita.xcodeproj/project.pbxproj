@@ -28,6 +28,7 @@
 		A1C080AF23D9710F001FEEB7 /* QICommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080AD23D9710F001FEEB7 /* QICommentCell.swift */; };
 		A1C080B023D9710F001FEEB7 /* QICommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C080AE23D9710F001FEEB7 /* QICommentCell.xib */; };
 		A1C080B223D97A21001FEEB7 /* QIItemInteractoreURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080B123D97A21001FEEB7 /* QIItemInteractoreURLSession.swift */; };
+		ECCF5DF623ED455700DFA4E7 /* QIItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCF5DF523ED455700DFA4E7 /* QIItemHeader.xib */; };
 		F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3BE23AF32EB001DBD68 /* AppDelegate.swift */; };
 		F2B7C3C623AF32EC001DBD68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C423AF32EC001DBD68 /* Main.storyboard */; };
 		F2B7C3C823AF32F5001DBD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C723AF32F5001DBD68 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		A56299CC9529C51A69683FCA /* Pods_Qiiiiiiita_QiiiiiiitaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Qiiiiiiita_QiiiiiiitaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B727DA1613477090E1F277 /* Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita-QiiiiiiitaTests/Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E03673C471E8DC4BD020035B /* Pods-Qiiiiiiita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita.debug.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita/Pods-Qiiiiiiita.debug.xcconfig"; sourceTree = "<group>"; };
+		ECCF5DF523ED455700DFA4E7 /* QIItemHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QIItemHeader.xib; sourceTree = "<group>"; };
 		F2B7C3BB23AF32EB001DBD68 /* Qiiiiiiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiiiiiiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B7C3BE23AF32EB001DBD68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2B7C3C523AF32EC001DBD68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				A1C080AE23D9710F001FEEB7 /* QICommentCell.xib */,
 				5F0082BA23E3E60F00E0EF25 /* QIItemCell.swift */,
 				5F0082BB23E3E60F00E0EF25 /* QIItemCell.xib */,
+				ECCF5DF523ED455700DFA4E7 /* QIItemHeader.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				F2B7C3C623AF32EC001DBD68 /* Main.storyboard in Resources */,
 				5F0082BD23E3E60F00E0EF25 /* QIItemCell.xib in Resources */,
 				A1C080B023D9710F001FEEB7 /* QICommentCell.xib in Resources */,
+				ECCF5DF623ED455700DFA4E7 /* QIItemHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

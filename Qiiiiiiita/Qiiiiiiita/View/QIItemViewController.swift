@@ -113,6 +113,25 @@ extension QIItemViewController:UITableViewDelegate
 extension QIItemViewController:UITableViewDataSource
 {
  
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0://投稿内容
+            return UIView()
+        default://コメント内容
+            if self.comments.count > 0
+            {
+                return Bundle.main.loadNibNamed("QIItemHeader", owner: self, options: nil)?.first as? UIView
+            }
+            else
+            {
+                return nil
+            }
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2 //2固定
