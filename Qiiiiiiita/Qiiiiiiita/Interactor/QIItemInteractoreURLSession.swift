@@ -11,6 +11,11 @@ class QIItemInteractorURLSession:QIItemInteractorInput,QIApiRequest
 {
     var output:QIItemInteractorOutput?
     let session = URLSession.shared
+    
+    func fetchAllData(itemId: String) {
+        //TODO: URLSessionでの作成
+    }
+    
     func fetchItem(itemId: String) {
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId
         /// URLから作られたリクエスト

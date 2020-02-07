@@ -11,6 +11,7 @@ import RxSwift
 
 
 protocol QIItemViewPresenter {
+    func getAllData(itemId:String)
     func getItem(itemId:String)
     func getComments(itemId:String)
     func didClickCommentButton(item:QIItemEntity)
@@ -36,6 +37,13 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
         self.interactor = interactor
     }
     
+    
+    /// 記事とコメント同時取得
+    /// - Parameter itemId: 記事ID
+    func getAllData(itemId:String)
+    {
+        interactor.fetchAllData(itemId: itemId)
+    }
     
     /// 記事取得
     /// - Parameter itemId: 記事ID
@@ -80,13 +88,10 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     }
 
     func tableSetItemCell(item: QIItemEntity,cell:QIItemCell) {
-
         cell.itemCellValue.attributedText = item.renderedBody.parseHTML2Text()
-
     }
     
     func tableSetCommentCell(comment: QICommentEntity,cell:QICommentCell) {
-
         cell.commentCellValue.attributedText = comment.renderedBody.parseHTML2Text()
     }
 }
