@@ -29,11 +29,17 @@
 		A1C080B023D9710F001FEEB7 /* QICommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C080AE23D9710F001FEEB7 /* QICommentCell.xib */; };
 		A1C080B223D97A21001FEEB7 /* QIItemInteractoreURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C080B123D97A21001FEEB7 /* QIItemInteractoreURLSession.swift */; };
 		ECCF5DF623ED455700DFA4E7 /* QIItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECCF5DF523ED455700DFA4E7 /* QIItemHeader.xib */; };
+		ECCF5DFD23ED628F00DFA4E7 /* QIItemInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5DFC23ED628F00DFA4E7 /* QIItemInteractorTests.swift */; };
+		ECCF5E0023ED637600DFA4E7 /* QICommentInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5DFF23ED637600DFA4E7 /* QICommentInteractorTests.swift */; };
+		ECCF5E0423ED64FC00DFA4E7 /* QIItemViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E0323ED64FC00DFA4E7 /* QIItemViewControllerTests.swift */; };
+		ECCF5E0623ED651000DFA4E7 /* QINewCommentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E0523ED651000DFA4E7 /* QINewCommentViewControllerTests.swift */; };
+		ECCF5E0823ED653B00DFA4E7 /* QIItemViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E0723ED653B00DFA4E7 /* QIItemViewPresenterTests.swift */; };
+		ECCF5E0A23ED655300DFA4E7 /* QINewCommentViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF5E0923ED655300DFA4E7 /* QINewCommentViewPresenterTests.swift */; };
 		F2B7C3BF23AF32EB001DBD68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3BE23AF32EB001DBD68 /* AppDelegate.swift */; };
 		F2B7C3C623AF32EC001DBD68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C423AF32EC001DBD68 /* Main.storyboard */; };
 		F2B7C3C823AF32F5001DBD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C723AF32F5001DBD68 /* Assets.xcassets */; };
 		F2B7C3CB23AF32F5001DBD68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B7C3C923AF32F5001DBD68 /* LaunchScreen.storyboard */; };
-		F2B7C3D623AF32F6001DBD68 /* QiiiiiiitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3D523AF32F6001DBD68 /* QiiiiiiitaTests.swift */; };
+		F2B7C3D623AF32F6001DBD68 /* QICommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3D523AF32F6001DBD68 /* QICommonTests.swift */; };
 		F2B7C3E123AF32F6001DBD68 /* QiiiiiiitaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B7C3E023AF32F6001DBD68 /* QiiiiiiitaUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +90,12 @@
 		B7B727DA1613477090E1F277 /* Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita-QiiiiiiitaTests/Pods-Qiiiiiiita-QiiiiiiitaTests.release.xcconfig"; sourceTree = "<group>"; };
 		E03673C471E8DC4BD020035B /* Pods-Qiiiiiiita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiiiiiiita.debug.xcconfig"; path = "Target Support Files/Pods-Qiiiiiiita/Pods-Qiiiiiiita.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCF5DF523ED455700DFA4E7 /* QIItemHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QIItemHeader.xib; sourceTree = "<group>"; };
+		ECCF5DFC23ED628F00DFA4E7 /* QIItemInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemInteractorTests.swift; sourceTree = "<group>"; };
+		ECCF5DFF23ED637600DFA4E7 /* QICommentInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommentInteractorTests.swift; sourceTree = "<group>"; };
+		ECCF5E0323ED64FC00DFA4E7 /* QIItemViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemViewControllerTests.swift; sourceTree = "<group>"; };
+		ECCF5E0523ED651000DFA4E7 /* QINewCommentViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QINewCommentViewControllerTests.swift; sourceTree = "<group>"; };
+		ECCF5E0723ED653B00DFA4E7 /* QIItemViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QIItemViewPresenterTests.swift; sourceTree = "<group>"; };
+		ECCF5E0923ED655300DFA4E7 /* QINewCommentViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QINewCommentViewPresenterTests.swift; sourceTree = "<group>"; };
 		F2B7C3BB23AF32EB001DBD68 /* Qiiiiiiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qiiiiiiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B7C3BE23AF32EB001DBD68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2B7C3C523AF32EC001DBD68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +103,7 @@
 		F2B7C3CA23AF32F5001DBD68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2B7C3CC23AF32F5001DBD68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2B7C3D123AF32F6001DBD68 /* QiiiiiiitaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiiiiiiitaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2B7C3D523AF32F6001DBD68 /* QiiiiiiitaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiiiiiiitaTests.swift; sourceTree = "<group>"; };
+		F2B7C3D523AF32F6001DBD68 /* QICommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QICommonTests.swift; sourceTree = "<group>"; };
 		F2B7C3D723AF32F6001DBD68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2B7C3DC23AF32F6001DBD68 /* QiiiiiiitaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiiiiiiitaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B7C3E023AF32F6001DBD68 /* QiiiiiiitaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiiiiiiitaUITests.swift; sourceTree = "<group>"; };
@@ -209,6 +221,33 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		ECCF5DFE23ED634E00DFA4E7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5DFC23ED628F00DFA4E7 /* QIItemInteractorTests.swift */,
+				ECCF5DFF23ED637600DFA4E7 /* QICommentInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ECCF5E0123ED63D300DFA4E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5E0323ED64FC00DFA4E7 /* QIItemViewControllerTests.swift */,
+				ECCF5E0523ED651000DFA4E7 /* QINewCommentViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECCF5E0223ED63E700DFA4E7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ECCF5E0723ED653B00DFA4E7 /* QIItemViewPresenterTests.swift */,
+				ECCF5E0923ED655300DFA4E7 /* QINewCommentViewPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		F2B7C3B223AF32EB001DBD68 = {
 			isa = PBXGroup;
 			children = (
@@ -254,8 +293,11 @@
 		F2B7C3D423AF32F6001DBD68 /* QiiiiiiitaTests */ = {
 			isa = PBXGroup;
 			children = (
-				F2B7C3D523AF32F6001DBD68 /* QiiiiiiitaTests.swift */,
 				F2B7C3D723AF32F6001DBD68 /* Info.plist */,
+				ECCF5DFE23ED634E00DFA4E7 /* Interactor */,
+				ECCF5E0223ED63E700DFA4E7 /* Presenter */,
+				F2B7C3D523AF32F6001DBD68 /* QICommonTests.swift */,
+				ECCF5E0123ED63D300DFA4E7 /* View */,
 			);
 			path = QiiiiiiitaTests;
 			sourceTree = "<group>";
@@ -563,7 +605,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B7C3D623AF32F6001DBD68 /* QiiiiiiitaTests.swift in Sources */,
+				F2B7C3D623AF32F6001DBD68 /* QICommonTests.swift in Sources */,
+				ECCF5E0623ED651000DFA4E7 /* QINewCommentViewControllerTests.swift in Sources */,
+				ECCF5E0823ED653B00DFA4E7 /* QIItemViewPresenterTests.swift in Sources */,
+				ECCF5E0423ED64FC00DFA4E7 /* QIItemViewControllerTests.swift in Sources */,
+				ECCF5E0023ED637600DFA4E7 /* QICommentInteractorTests.swift in Sources */,
+				ECCF5E0A23ED655300DFA4E7 /* QINewCommentViewPresenterTests.swift in Sources */,
+				ECCF5DFD23ED628F00DFA4E7 /* QIItemInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
