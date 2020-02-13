@@ -20,9 +20,8 @@ protocol QICommentInteractorOutput {
 
 //API呼ぶ処理を定義、interactorInput経由データをやり取り
 class QICommentInteractor:QICommentInteractorInput,QIApiRequest
-{
+{    
     var output:QICommentInteractorOutput?
-    
     
     /// 記事にたいしてｋコメントを投稿
     /// - Parameters:

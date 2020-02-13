@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRT-rC-skB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -13,7 +13,7 @@
             <objects>
                 <navigationController id="RRT-rC-skB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qgk-po-Fp1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,11 +29,11 @@
             <objects>
                 <viewController id="gGo-02-upB" customClass="QIItemViewController" customModule="Qiiiiiiita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="QICommentView" id="xHm-ra-GjQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sZF-co-YYg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="699"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="548" id="4bs-7z-Nqu"/>
@@ -41,7 +41,7 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-I1-uSb">
-                                <rect key="frame" x="316" y="806" width="82" height="36"/>
+                                <rect key="frame" x="277" y="722" width="82" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="コメント"/>
                                 <connections>
@@ -69,64 +69,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdz-PV-XzT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191.19999999999999" y="114.69265367316342"/>
+            <point key="canvasLocation" x="-191.19999999999999" y="114.53201970443351"/>
         </scene>
         <!--New Comment View Controller-->
         <scene sceneID="VTt-RI-ym1">
             <objects>
                 <viewController storyboardIdentifier="QICommentView" id="xZH-DQ-3iA" customClass="QINewCommentViewController" customModule="Qiiiiiiita" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XVu-jN-fH3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="コメントサンプル" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="foR-1t-gnk">
-                                <rect key="frame" x="20" y="150" width="374" height="415"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="foR-1t-gnk">
+                                <rect key="frame" x="20" y="119" width="335" height="518"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="415" id="L2F-LB-kQi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="415" id="R7O-Ao-3LA"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXA-Ig-erb">
-                                <rect key="frame" x="20" y="64" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメントを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXA-Ig-erb">
+                                <rect key="frame" x="20" y="64" width="335" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="RvY-qG-Vmm"/>
+                                    <constraint firstAttribute="height" constant="25" id="jP3-Xb-FuS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHP-tR-w2I">
-                                <rect key="frame" x="20" y="671" width="374" height="80"/>
+                                <rect key="frame" x="112.66666666666669" y="698" width="150" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Hqb-up-iYz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="qX4-08-tC4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="se1-75-9fp"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <state key="normal" title="投　稿"/>
+                                <connections>
+                                    <action selector="clickPostCommetButton:" destination="xZH-DQ-3iA" eventType="touchUpInside" id="MBf-DZ-eqy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="foR-1t-gnk" firstAttribute="top" secondItem="OXA-Ig-erb" secondAttribute="bottom" constant="65" id="18Z-22-hk7"/>
+                            <constraint firstItem="foR-1t-gnk" firstAttribute="top" secondItem="OXA-Ig-erb" secondAttribute="bottom" constant="30" id="18Z-22-hk7"/>
                             <constraint firstItem="OXA-Ig-erb" firstAttribute="leading" secondItem="uF5-Hq-kZ2" secondAttribute="leading" constant="20" id="8vL-9C-zbg"/>
+                            <constraint firstItem="HHP-tR-w2I" firstAttribute="centerX" secondItem="foR-1t-gnk" secondAttribute="centerX" id="AaU-0B-YF3"/>
                             <constraint firstItem="uF5-Hq-kZ2" firstAttribute="trailing" secondItem="foR-1t-gnk" secondAttribute="trailing" constant="20" id="P77-S5-A9i"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="HHP-tR-w2I" secondAttribute="bottom" constant="111" id="Q1K-fU-g2D"/>
                             <constraint firstItem="foR-1t-gnk" firstAttribute="leading" secondItem="OXA-Ig-erb" secondAttribute="leading" id="UbG-Sa-y25"/>
-                            <constraint firstItem="HHP-tR-w2I" firstAttribute="leading" secondItem="uF5-Hq-kZ2" secondAttribute="leading" constant="20" id="ed8-fH-YlH"/>
+                            <constraint firstItem="HHP-tR-w2I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uF5-Hq-kZ2" secondAttribute="leading" constant="20" id="ed8-fH-YlH"/>
                             <constraint firstItem="OXA-Ig-erb" firstAttribute="top" secondItem="uF5-Hq-kZ2" secondAttribute="top" constant="20" id="emT-P9-bS3"/>
-                            <constraint firstItem="uF5-Hq-kZ2" firstAttribute="trailing" secondItem="HHP-tR-w2I" secondAttribute="trailing" constant="20" id="lrr-ds-IQz"/>
+                            <constraint firstItem="uF5-Hq-kZ2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HHP-tR-w2I" secondAttribute="trailing" constant="20" id="lrr-ds-IQz"/>
+                            <constraint firstItem="HHP-tR-w2I" firstAttribute="top" secondItem="foR-1t-gnk" secondAttribute="bottom" constant="61" id="pw1-iO-LMv"/>
                             <constraint firstItem="uF5-Hq-kZ2" firstAttribute="trailing" secondItem="OXA-Ig-erb" secondAttribute="trailing" constant="20" id="qv2-2t-bpc"/>
+                            <constraint firstItem="HHP-tR-w2I" firstAttribute="bottom" secondItem="uF5-Hq-kZ2" secondAttribute="bottom" id="wEy-AL-fu0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uF5-Hq-kZ2"/>
                     </view>
                     <navigationItem key="navigationItem" id="U4R-j3-5S5"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="foR-1t-gnk" id="Jgg-v4-ZYv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pz-as-1tu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698.55072463768124" y="115.17857142857142"/>
+            <point key="canvasLocation" x="698.39999999999998" y="114.69265367316342"/>
         </scene>
     </scenes>
 </document>

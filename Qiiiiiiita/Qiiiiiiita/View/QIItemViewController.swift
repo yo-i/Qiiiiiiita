@@ -105,12 +105,7 @@ extension QIItemViewController:QIItemViewInterface
     }
 }
 
-extension QIItemViewController:UITableViewDelegate
-{
-    
-}
-
-extension QIItemViewController:UITableViewDataSource
+extension QIItemViewController:UITableViewDataSource,UITableViewDelegate
 {
  
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

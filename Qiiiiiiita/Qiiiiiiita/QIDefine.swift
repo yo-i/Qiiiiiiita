@@ -16,15 +16,18 @@ enum QIMessage:String
 {
     case noNetwork  = "ネットワーク接続が検出されませんでした。"
     case item   = "記事の取得"
-
+    case comment = "コメント投稿"
     
-    func success()->String
+    func success(forceMessage:String? = nil)->String
     {
         //文脈がおかしいの場合、caseで別ける
         switch self{
 
         default:
-            return self.rawValue + "が完了しました。"
+            guard let forceMsg = forceMessage else {
+                return self.rawValue + "に成功しました。"
+            }
+            return self.rawValue + forceMsg
         }
         
     }

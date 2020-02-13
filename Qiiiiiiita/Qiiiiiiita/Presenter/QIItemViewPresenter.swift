@@ -26,9 +26,7 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     weak var view:QIItemViewController?
     var router:QIItemViewRouter
     var interactor:QIItemInteractor
-    
-    var comments:[QICommentEntity] = []
-    var item:QIItemEntity? = nil
+
     
     required init(view:QIItemViewController,router:QIItemViewRouter,interactor:QIItemInteractor)
     {
