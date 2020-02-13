@@ -24,7 +24,6 @@ protocol QIItemInteractorOutput {
 let QIItemErrorDomin = "QIItemInteractor"
 enum QIItemInteractorError:Int
 {
-
     case fatchItem
     case fatchComment
     case json
@@ -34,33 +33,41 @@ enum QIItemInteractorError:Int
     }
 }
 
-//API呼ぶ処理を定義、interactorInput経由データをやり取り
-class QIItemInteractor:QIItemInteractorInput,QIApiRequest
+
+internal class QIItemService:QIApiRequest
 {
-    var output:QIItemInteractorOutput?
-    private let disposeBag = DisposeBag()
-
-    func fetchAllData(itemId:String)
+    func fetchItemRx(itemId: String)->Observable<QIItemEntity>
     {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 2
-        let scheduler = OperationQueueScheduler(operationQueue: queue)
-        
-        //zipを使い、両方のデータが非同期で取り終わったタイミングでsubscribeし、がoutputに通知
-        _ = Observable.zip(fetchItemRx(itemId: itemId), fetchCommentRx(itemId: itemId))
-            .subscribeOn(scheduler)
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (item,comments) in
+        let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId
+        log.info(baseUrl)
+        return Observable.create { (ob) -> Disposable in
 
-                self.output?.fetchedItem(item: item)
-                self.output?.fetchedComment(comments: comments)
-                self.output?.success()
-            }, onError: { (_) in
-                self.output?.failed()
-            }, onCompleted: nil, onDisposed: nil)
+            AF.request(baseUrl).responseJSON { (res) in
+                
+                switch res.result{
+                case .failure(let error):
+                    log.error(error)
+                    ob.on(.error(QIItemInteractorError.fatchItem.error()))
+                case .success:
+                    do
+                    {
+                        let response = try JSONDecoder().decode(QIItemEntity.self, from: res.data!)
+
+                        ob.on(.next(response))
+                        ob.on(.completed)
+                    }
+                    catch
+                    {
+                        ob.on(.error(QIItemInteractorError.json.error()))
+                    }
+                }
+            }
+            return Disposables.create()
+            
+        }
     }
     
-    fileprivate func fetchCommentRx(itemId: String)->Observable<[QICommentEntity]>
+    func fetchCommentRx(itemId: String)->Observable<[QICommentEntity]>
     {
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId + "/" + QIApiType.comment.rawValue
         log.info(baseUrl)
@@ -88,37 +95,33 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
         }
         
     }
-    
-    fileprivate func fetchItemRx(itemId: String)->Observable<QIItemEntity>
+}
+
+//API呼ぶ処理を定義、interactorInput経由データをやり取り
+class QIItemInteractor:QIItemInteractorInput
+{
+    var api = QIItemService()
+    var output:QIItemInteractorOutput?
+    private let disposeBag = DisposeBag()
+
+    func fetchAllData(itemId:String)
     {
-        let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId
-        return Observable.create { (ob) -> Disposable in
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 2
+        let scheduler = OperationQueueScheduler(operationQueue: queue)
 
-            AF.request(baseUrl).responseJSON { (res) in
-                
-                switch res.result{
-                case .failure(let error):
-                    log.error(error)
-                    ob.on(.error(QIItemInteractorError.fatchItem.error()))
-                case .success:
-                    do
-                    {
-                        let response = try JSONDecoder().decode(QIItemEntity.self, from: res.data!)
+        //zipを使い、両方のデータが非同期で取り終わったタイミングでsubscribeし、がoutputに通知
+        _ = Observable.zip(api.fetchItemRx(itemId: itemId), api.fetchCommentRx(itemId: itemId))
+            .subscribeOn(scheduler)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { (item,comments) in
 
-                        ob.on(.next(response))
-                        ob.on(.completed)
-                    }
-                    catch
-                    {
-                        ob.on(.error(QIItemInteractorError.json.error()))
-                    }
-                }
-            }
-            return Disposables.create()
-            
-        }
-        
-       
+                self.output?.fetchedItem(item: item)
+                self.output?.fetchedComment(comments: comments)
+                self.output?.success()
+            }, onError: { (_) in
+                self.output?.failed()
+            }, onCompleted: nil, onDisposed: nil)
     }
-    
+
 }

@@ -10,10 +10,10 @@ import UIKit
 
 class QIItemViewRouter{
     
-    weak var view:QIItemViewController?
+    weak var view:UIViewController?
     var newCommentVC :QINewCommentViewController?
     
-    init(viewController:QIItemViewController) {
+    init(viewController:UIViewController) {
         self.view = viewController
     }
     func pushCommentView(item:QIItemEntity)

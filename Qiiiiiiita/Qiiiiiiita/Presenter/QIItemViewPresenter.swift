@@ -23,14 +23,13 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
 
     
 
-    weak var view:QIItemViewController?
+    weak var userInterface:QIItemViewInterface?
     var router:QIItemViewRouter
     var interactor:QIItemInteractor
 
     
-    required init(view:QIItemViewController,router:QIItemViewRouter,interactor:QIItemInteractor)
+    required init(router:QIItemViewRouter,interactor:QIItemInteractor)
     {
-        self.view = view
         self.router = router
         self.interactor = interactor
     }
@@ -45,12 +44,12 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     
     func fetchedItem(item: QIItemEntity) {
         log.info(#function)
-        self.view?.showItem(item: item)
+        self.userInterface?.showItem(item: item)
     }
     
     func fetchedComment(comments: [QICommentEntity]) {
         log.info(#function)
-        self.view?.showComments(comment: comments)
+        self.userInterface?.showComments(comment: comments)
     }
     
     func didClickCommentButton(item:QIItemEntity)
@@ -64,14 +63,15 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
 
     func viewDidAppear() {
         log.info(#function)
+        
     }
     
     func success() {
-        self.view?.showSuccess()
+        self.userInterface?.showSuccess()
     }
     
     func failed() {
-        self.view?.showNetWorkError()
+        self.userInterface?.showNetWorkError()
     }
     
 

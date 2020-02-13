@@ -14,7 +14,7 @@ import SVProgressHUD
 import Toast_Swift
 
 
-protocol QIItemViewInterface {
+protocol QIItemViewInterface:AnyObject {
     func showItem(item:QIItemEntity)
     func showComments(comment:[QICommentEntity])
     func showSuccess()
@@ -41,7 +41,8 @@ class QIItemViewController: UIViewController {
 
 
         router = QIItemViewRouter(viewController: self)
-        presenter = QIItemViewPresentation(view: self,router: router ,interactor: itemInteractor)
+        presenter = QIItemViewPresentation(router: router ,interactor: itemInteractor)
+        presenter.userInterface = self
         itemInteractor.output = presenter
         
         setupView()

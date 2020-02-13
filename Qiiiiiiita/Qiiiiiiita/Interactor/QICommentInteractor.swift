@@ -30,35 +30,13 @@ enum QICommentInteractorError:Int
     }
 }
 
-//API呼ぶ処理を定義、interactorInput経由データをやり取り
-class QICommentInteractor:QICommentInteractorInput,QIApiRequest
-{    
-    var output:QICommentInteractorOutput?
-    
-    func postComment(itemId: String, comment: String) {
-        _ = self.postCommentRx(itemId: itemId, comment: comment)
-            .subscribeOn(SerialDispatchQueueScheduler(qos: DispatchQoS.default))    //バックグラウンド実行
-            .observeOn(MainScheduler.instance)                  //結果をメインスレッドで受け
-            .subscribe(onNext: { (success) in
-                if success
-                {
-                    self.output?.postedComment()
-                }
-                else
-                {
-                    self.output?.failed()
-                }
-            }, onError: { (error) in
-                self.output?.failed()
-            }, onCompleted: nil, onDisposed: nil)
-        
-    }
-    
+
+class QICommentService:QIApiRequest{
     /// 記事にたいしてｋコメントを投稿
     /// - Parameters:
     ///   - itemId: 記事ID
     ///   - comment: コメント内容
-    private func postCommentRx(itemId: String, comment: String) -> Observable<Bool>{
+    func postCommentRx(itemId: String, comment: String) -> Observable<Bool>{
         
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId + "/comments"
         let headers: HTTPHeaders = [
@@ -97,4 +75,31 @@ class QICommentInteractor:QICommentInteractorInput,QIApiRequest
             return Disposables.create()
         }
     }
+}
+
+//API呼ぶ処理を定義、interactorInput経由データをやり取り
+class QICommentInteractor:QICommentInteractorInput
+{    
+    var output:QICommentInteractorOutput?
+    var api:QICommentService?
+    func postComment(itemId: String, comment: String) {
+        _ = self.api?.postCommentRx(itemId: itemId, comment: comment)
+            .subscribeOn(SerialDispatchQueueScheduler(qos: DispatchQoS.default))    //バックグラウンド実行
+            .observeOn(MainScheduler.instance)                  //結果をメインスレッドで受け
+            .subscribe(onNext: { (success) in
+                if success
+                {
+                    self.output?.postedComment()
+                }
+                else
+                {
+                    self.output?.failed()
+                }
+            }, onError: { (error) in
+                self.output?.failed()
+            }, onCompleted: nil, onDisposed: nil)
+        
+    }
+    
+    
 }
