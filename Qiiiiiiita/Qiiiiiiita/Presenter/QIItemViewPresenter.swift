@@ -12,8 +12,6 @@ import RxSwift
 
 protocol QIItemViewPresenter {
     func getAllData(itemId:String)
-    func getItem(itemId:String)
-    func getComments(itemId:String)
     func didClickCommentButton(item:QIItemEntity)
     func viewDidLoad()
     func viewDidAppear()
@@ -22,6 +20,8 @@ protocol QIItemViewPresenter {
 }
 
 class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
+
+    
 
     weak var view:QIItemViewController?
     var router:QIItemViewRouter
@@ -42,22 +42,6 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     {
         interactor.fetchAllData(itemId: itemId)
     }
-    
-    /// 記事取得
-    /// - Parameter itemId: 記事ID
-    func getItem(itemId:String)
-    {
-        interactor.fetchItem(itemId: itemId)
-    }
-    
-    
-    /// 記事コメント取得
-    /// - Parameter itemId: 記事ID
-    func getComments(itemId:String)
-    {
-        interactor.fetchComment(itemId: itemId)
-    }
-    
     
     func fetchedItem(item: QIItemEntity) {
         log.info(#function)
@@ -81,9 +65,15 @@ class QIItemViewPresentation:QIItemViewPresenter,QIItemInteractorOutput{
     func viewDidAppear() {
         log.info(#function)
     }
+    
+    func success() {
+        self.view?.showSuccess()
+    }
+    
     func failed() {
         self.view?.showNetWorkError()
     }
+    
 
     func tableSetItemCell(item: QIItemEntity,cell:QIItemCell) {
         cell.itemCellValue.attributedText = item.renderedBody.parseHTML2Text()

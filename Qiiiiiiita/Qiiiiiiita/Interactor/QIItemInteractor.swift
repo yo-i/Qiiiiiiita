@@ -12,18 +12,27 @@ import RxSwift
 
 protocol QIItemInteractorInput {
     func fetchAllData(itemId:String)
-//    func fetchItem(itemId:String)
-//    func fetchComment(itemId:String)
-    
 }
 
 protocol QIItemInteractorOutput {
     func fetchedItem(item:QIItemEntity)
     func fetchedComment(comments:[QICommentEntity])
     func failed()
+    func success()
 }
 
+let QIItemErrorDomin = "QIItemInteractor"
+enum QIItemInteractorError:Int
+{
 
+    case fatchItem
+    case fatchComment
+    case json
+    
+    func error(userInfo: [String : AnyObject]? = nil) -> NSError {
+        return NSError(domain: QIItemErrorDomin, code: self.rawValue, userInfo: userInfo)
+    }
+}
 
 //API呼ぶ処理を定義、interactorInput経由データをやり取り
 class QIItemInteractor:QIItemInteractorInput,QIApiRequest
@@ -45,24 +54,22 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
 
                 self.output?.fetchedItem(item: item)
                 self.output?.fetchedComment(comments: comments)
-                
+                self.output?.success()
             }, onError: { (_) in
                 self.output?.failed()
             }, onCompleted: nil, onDisposed: nil)
     }
     
-    func fetchCommentRx(itemId: String)->Observable<[QICommentEntity]>
+    fileprivate func fetchCommentRx(itemId: String)->Observable<[QICommentEntity]>
     {
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId + "/" + QIApiType.comment.rawValue
         log.info(baseUrl)
         return Observable.create { (ob) -> Disposable in
-
             AF.request(baseUrl).responseJSON { (res) in
-                       
                 switch res.result{
                 case .failure(let error):
                     log.error(error)
-                    self.output?.failed()
+                    ob.on(.error(QIItemInteractorError.fatchComment.error()))
                 case .success:
                     do
                     {
@@ -73,17 +80,16 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
                     }
                     catch
                     {
-                        ob.onError(error)
+                        ob.on(.error(QIItemInteractorError.json.error()))
                     }
                 }
             }
-            // MARK: 失敗したら空のものを返す?
             return Disposables.create()
         }
         
     }
     
-    func fetchItemRx(itemId: String)->Observable<QIItemEntity>
+    fileprivate func fetchItemRx(itemId: String)->Observable<QIItemEntity>
     {
         let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId
         return Observable.create { (ob) -> Disposable in
@@ -93,6 +99,7 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
                 switch res.result{
                 case .failure(let error):
                     log.error(error)
+                    ob.on(.error(QIItemInteractorError.fatchItem.error()))
                 case .success:
                     do
                     {
@@ -103,7 +110,7 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
                     }
                     catch
                     {
-                        //TODO: エラー
+                        ob.on(.error(QIItemInteractorError.json.error()))
                     }
                 }
             }
@@ -113,70 +120,5 @@ class QIItemInteractor:QIItemInteractorInput,QIApiRequest
         
        
     }
-    
-    /// 記事を取得
-    /// - Parameter itemId: 記事のID
-    func fetchItem(itemId: String)
-    {
-        let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId
-
-        log.info(baseUrl)
-        AF.request(baseUrl).responseJSON { (res) in
-            
-            switch res.result{
-            case .failure(let error):
-                log.error(error)
-            case .success:
-                do
-                {
-                    let response = try JSONDecoder().decode(QIItemEntity.self, from: res.data!)
-                    log.info(response)
-
-                }
-                catch
-                {
-                }
-                
-            }
-            
-        }
-        
-        
-    }
-    
-    
-    /// 記事のコメントを取得
-    /// - Parameter itemId: 記事ID
-    func fetchComment(itemId: String) {
-        let baseUrl = baseURL + QIApiType.items.rawValue + "/" + itemId + "/" + QIApiType.comment.rawValue
-    
-        AF.request(baseUrl).responseJSON { (res) in
-           
-            switch res.result{
-            case .failure(let error):
-                log.error(error)
-                self.output?.failed()
-            case .success:
-
-                do
-                {
-                    //FIXME: fetchしたデータが存在しないのエラーハンドリング
-                    let response = try JSONDecoder().decode([QICommentEntity].self, from: res.data!)
-                    log.info(response)
-                    //TODO:
-//                    self.output?.fetchedComment(comments: response)
-                    
-                    
-                }
-                catch
-                {
-                    self.output?.failed()
-                }
-                
-            }
-            
-        }
-    }
-    
     
 }

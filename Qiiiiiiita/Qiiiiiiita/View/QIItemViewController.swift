@@ -17,6 +17,7 @@ import Toast_Swift
 protocol QIItemViewInterface {
     func showItem(item:QIItemEntity)
     func showComments(comment:[QICommentEntity])
+    func showSuccess()
     func showNetWorkError()
 }
 
@@ -82,9 +83,12 @@ class QIItemViewController: UIViewController {
 
 extension QIItemViewController:QIItemViewInterface
 {
+    func showSuccess() {
+        self.view.makeToast(QIMessage.item.success())
+    }
+    
     func showItem(item: QIItemEntity) {
 
-        self.view.makeToast(QIMessage.item.success())
         self.item = item
         self.itemTable.reloadSections(IndexSet(integer: 0), with: .automatic)
         self.navigationItem.title = item.title
